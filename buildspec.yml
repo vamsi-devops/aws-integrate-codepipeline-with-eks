@@ -8,7 +8,7 @@ phases:
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email) 
       - mvn clean install
-      - cp /root/.m2/repository/com/*/*/*/*.war s3://ecrwar
+      - #cp /root/.m2/repository/com/*/*/*/*.war s3://ecrwar
   build:
     commands:
       - echo Build started on `date`
