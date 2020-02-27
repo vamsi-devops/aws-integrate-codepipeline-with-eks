@@ -21,7 +21,7 @@ phases:
       - echo Pushing the Docker images...
       - docker push 899488875890.dkr.ecr.ap-south-1.amazonaws.com/aws-ecr:latest
       - wget https://ecrwar.s3.ap-south-1.amazonaws.com/aws.pem
-      - ssh -i "aws.pem" ec2-user@ec2-13-234-18-69.ap-south-1.compute.amazonaws.com 'sudo apt-get update -y'
+      - ssh -i "aws.pem" ec2-user@ec2-13-234-18-69.ap-south-1.compute.amazonaws.com 'sudo yum update -y'
       - ssh -i "aws.pem" ec2-user@ec2-13-234-18-69.ap-south-1.compute.amazonaws.com 'docker pull 899488875890.dkr.ecr.ap-south-1.amazonaws.com/aws-ecr:latest'
       - echo Writing image definitions file...
       - #printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
