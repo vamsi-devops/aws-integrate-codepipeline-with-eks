@@ -11,7 +11,6 @@ phases:
       - #cp /root/.m2/repository/com/*/*/*/*.war s3://ecrwar
   build:
     commands:
-      - ping 13.234.18.69
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t babu:latest .
