@@ -14,12 +14,12 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t babu:latest .
-      - docker tag babu:latest 899488875890.dkr.ecr.ap-south-1.amazonaws.com/aws-ecr:latest
+      - docker tag babu:latest 899488875890.dkr.ecr.us-east-2.amazonaws.com/middle:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push 899488875890.dkr.ecr.ap-south-1.amazonaws.com/aws-ecr:latest
+      - docker push 899488875890.dkr.ecr.us-east-2.amazonaws.com/middle:latest
      # - ssh -i aws.pem ssh@13.234.18.69 'sudo yum -y update' '
      # - chmod +x aws.pem
      # - ssh -i "aws.pem" ec2-user@ec2-13-234-18-69.ap-south-1.compute.amazonaws.com 'sudo yum update -y'
